@@ -1,0 +1,161 @@
+body {
+    background-color: black;
+    font-family: Arial, Helvetica, sans-serif;
+    overflow: hidden;
+    margin: 0;
+    padding: 0;
+}
+
+.area-login{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+    padding-right: 20px;
+}
+
+.login{
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #181920;
+    box-shadow: 0px 10px 40px #1c8b62;
+    width: 285px;
+    height: 330px;
+    padding: 25px;
+    border-radius: 15px;
+    padding-top: 10px;
+}
+
+.form{
+    display: flex;
+    flex-direction: column;
+}
+
+.input{
+    margin-top: 10px;
+    background-color: #252A34;;
+    padding-left: 10px;
+    color: #CBD0F7;
+    border: none;
+    height: 40px;
+    width: 287px;
+    outline: none;
+    border-radius: 8px;
+}
+
+input::placeholder{
+    color: #CBD0F7;
+    font-size: 14px;
+}
+
+.logar{
+    color:#1c8b62
+}
+
+.usuario{
+    color: #f0ffffde;
+    padding-right: 240px;
+}
+
+.senha{
+    color: #f0ffffde;
+    padding-right: 249px;
+    padding-top: 10px;
+}
+
+.Entrar{
+    margin-top: 10px;
+    display: flex;
+    justify-content: center;
+    background-color: #12523a;
+    font-size: 15px;
+    width: 299px;
+    height: 45px;
+    color: white;
+    text-transform: uppercase;
+    font-weight: bold;
+    font-family: Arial;
+    border-radius: 10px;
+    border: none;
+    cursor: pointer;
+}
+
+.text{
+    color: white
+}
+
+.texto{
+    color: white;
+    padding-right: 275px;
+    color: #1c8b62
+}
+
+input:invalid{
+    animation: shake .3s;
+}
+
+@keyframes shake{
+    25% {transform: translateX(4px) }
+    50% {transform: translateX(-4px) }
+    75% {transform: translateX(4px) }
+}
+
+
+
+a{
+    color: #1c8b62;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+a:hover {
+    opacity: 0.7;
+}
+
+nav {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #23232e;
+    height: 8vh;
+}
+
+main{
+    background: url(bg.jpg.jpg) no-repeat center center;
+    background-size: cover;
+    height: 92vh;
+}
+
+.nav-list {
+    list-style: none;
+    display: flex;
+}
+
+.nav-list li {
+    letter-spacing: 3px;
+    margin-left: 32px;
+}
+
+header .nav-list li{
+    display: inline-block;
+}
+
+h2{
+    color: #fff
+}
+
+header .nav-list a{
+    color: white;
+    padding: 8px 8px;
+    border-radius: 3px;
+    transition: 200ms;
+}
+
+header .nav-list .ativo, header .nav-list a:hover{
+    color: #444;
+    background-color: white;
+}

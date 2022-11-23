@@ -1,0 +1,55 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tela de Login</title>
+    
+    <link rel="stylesheet" href="{% static 'css/login.css' %}">
+</head>
+<body>
+
+<header>
+    
+    <section class="area-login">
+
+        <div class="geral">
+
+            <form class="form">
+                <div class="login">
+
+                    <div class="logar">
+                        <h1>LOGIN</h1>
+                    </div>    
+
+                    <div class="usuario">
+                        <label>Usuario:</label>
+                    </div>
+                    <input type="text"
+                    pattern="[a-z]*" 
+                    name="nome", placeholder="nome de usuario" autofocus class="input">
+                    
+                    <div class="senha">
+                        <label>Senha:</label>
+                    </div>
+                    <input type="password", name="nome", placeholder="sua senha" autofocus class="input">
+                    
+                    <input class="Entrar" type="submit" value="Entrar"> 
+
+                    <div class="text">
+                        <p>Ainda não tem uma conta? <a href="teladelogin.html">Criar conta</a></p> 
+                    </div>
+                   
+                </div>
+
+            </form>
+
+        </div>
+    </section>
+
+</header>
+</body>
+</html>
