@@ -1,0 +1,73 @@
+{% load static %}
+
+<!DOCTYPE html>
+
+<html lang="br">
+
+<!--cabeça-->
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Login</title>
+
+    <!--link css-->
+
+   <link rel="stylesheet" href="{% static 'css/Login.css' %}">
+
+</head>
+
+
+<!--corpo-->
+
+<body>
+
+    <header>
+
+        <nav>
+            <h2>Veste Você</h2>
+        </nav>
+    <section class="area-cadastro">
+
+        <div class="geral"> <!-- div geral -->
+
+            <h1>LOGIN</h1>
+
+            {% block body %}
+
+            <form class="form"  name="login" method="post" action="/dolog/"> <!-- form: codigo para gerar formulário-->
+
+             {% csrf_token %}
+
+                <div class="Usuario">
+                    {{login.usuario}}
+
+
+                </div>
+
+                <div class="senha">
+                    {{login.senha}}
+
+
+                </div>
+
+
+            <div class="criar">
+
+                <input type="submit" value="entrar"">
+
+            </div>
+            </form>
+
+            {% endblock %}
+
+        </div> <!-- fim da div geral-->
+
+    </section>
+    </header>
+
+</body>
+
+</html>

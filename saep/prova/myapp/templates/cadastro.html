@@ -1,0 +1,224 @@
+{%  load static %}
+
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="{% static 'css/cadastro.css' %}">
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">  
+    <title>Formulário</title>
+</head>
+
+<body>
+
+    <div class="container">
+        <div class="form-image">
+            <img src="https://i.imgur.com/v6IPhVo.png" alt="">
+        </div>
+        <form class="form" name="cadastro" method="post" action="/docad/"> 
+
+                {% csrf_token %}
+
+                <div class="form-header">
+                    <div class="title">
+                        
+                        <div class="cadastre-se">
+                            <h1>Cadastre-se</h1>
+                            <div id='msgError'></div>
+                        <div id='msgSuccess'></div>
+                        </div>
+                    
+                    </div>
+                    <div class="login-button">
+                        <button><a href="login.html">Entrar</a></button>
+                    </div>
+                </div>
+
+                <div class="input-group">
+                    
+                    <div class="label-float">
+                        {{form.nome}}
+                        <label id="labelNome" for="nome">Nome</label>
+                     </div>
+
+                     <div class="label-float">
+                        {{form.sobrenome}}
+                        <label id="labelSobrenome" for="sobrenome">Sobrenome</label>
+                     </div>
+
+                     <div class="label-float">
+                        {{form.telefone}}
+                        <label id="labelTelefone" for="telefone">Telefone</label>
+                     </div>
+
+                     <div class="label-float">
+                        {{form.usuario}}
+                        <label id="labelUsuario" for="usuario">Usuário</label>
+                     </div>
+
+                     <div class="label-float">
+                        {{form.senha}}
+                        <label id="labelSenha" for="senha">Senha</label>              
+                     </div>
+
+                     <div class="label-float">
+                        {{form.confirmar_senha}}
+                        <label id="labelConfirmSenha" for="confirmSenha">Confirmar Senha</label>
+                     </div>
+            
+                </div>
+
+                <div class="justify-center">
+                    <button type="submit" class="btn" onclick='cadastrar()'>Cadastrar</button>
+                </div>
+
+            </form>
+
+         </div>
+
+            
+        </div>
+    </div>
+
+    <script>
+
+let btn = document.querySelector('#verSenha')
+let btnConfirm = document.querySelector('#verConfirmSenha')
+
+
+let nome = document.querySelector('#nome')
+let labelNome = document.querySelector('#labelNome')
+let validNome = false
+
+let sobrenome = document.querySelector('#sobrenome')
+let labelSobrenome = document.querySelector('#labelSobrenome')
+let validSobrenome = false
+
+let telefone = document.querySelector('#telefone')
+let labelTelefone = document.querySelector('#labelTelefone')
+let validTelefone = false
+
+let usuario = document.querySelector('#usuario')
+let labelUsuario = document.querySelector('#labelUsuario')
+let validUsuario = false
+
+let senha = document.querySelector('#senha')
+let labelSenha = document.querySelector('#labelSenha')
+let validSenha = false
+
+let confirmSenha = document.querySelector('#confirmSenha')
+let labelConfirmSenha = document.querySelector('#labelConfirmSenha')
+let validConfirmSenha = false
+
+let msgError = document.querySelector('#msgError')
+let msgSuccess = document.querySelector('#msgSuccess')
+
+nome.addEventListener('keyup', () => {
+  if(nome.value.length <= 2){
+    labelNome.setAttribute('style', 'color: red')
+    labelNome.innerHTML = '* Insira no minimo 3 caracteres'
+    nome.setAttribute('style', 'border-color: red')
+    validNome = false
+  } else {
+    labelNome.setAttribute('style', 'color: green')
+    labelNome.innerHTML = 'Nome'
+    nome.setAttribute('style', 'border-color: green')
+    validNome = true
+  }
+})
+
+sobrenome.addEventListener('keyup', () => {
+    if(sobrenome.value.length <= 2){
+      labelSobrenome.setAttribute('style', 'color: red')
+      labelSobrenome.innerHTML = '* Insira no minimo 3 caracteres'
+      sobrenome.setAttribute('style', 'border-color: red')
+      validSobrenome = false
+    } else {
+      labelSobrenome.setAttribute('style', 'color: green')
+      labelSobrenome.innerHTML = 'Sobrenome'
+      sobrenome.setAttribute('style', 'border-color: green')
+      validSobrenome = true
+    }
+  })
+
+telefone.addEventListener('keyup', () => {
+    if(telefone.value.length <= 10){
+      labelTelefone.setAttribute('style', 'color: red')
+      labelTelefone.innerHTML = '* Número incompleto'
+      telefone.setAttribute('style', 'border-color: red')
+      validTelefone = false
+    } else {
+      labelTelefone.setAttribute('style', 'color: green')
+      labelTelefone.innerHTML = 'Telefone'
+      telefone.setAttribute('style', 'border-color: green')
+      validTelefone = true
+    }
+  })
+
+
+usuario.addEventListener('keyup', () => {
+  if(usuario.value.length <= 4){
+    labelUsuario.setAttribute('style', 'color: red')
+    labelUsuario.innerHTML = '* Insira no minimo 5 caracteres'
+    usuario.setAttribute('style', 'border-color: red')
+    validUsuario = false
+  } else {
+    labelUsuario.setAttribute('style', 'color: green')
+    labelUsuario.innerHTML = 'Usuário'
+    usuario.setAttribute('style', 'border-color: green')
+    validUsuario = true
+  }
+})
+
+senha.addEventListener('keyup', () => {
+  if(senha.value.length <= 5){
+    labelSenha.setAttribute('style', 'color: red')
+    labelSenha.innerHTML = '* Insira no minimo 6 caracteres'
+    senha.setAttribute('style', 'border-color: red')
+    validSenha = false
+  } else {
+    labelSenha.setAttribute('style', 'color: green')
+    labelSenha.innerHTML = 'Senha'
+    senha.setAttribute('style', 'border-color: green')
+    validSenha = true
+  }
+})
+
+confirmSenha.addEventListener('keyup', () => {
+  if(senha.value != confirmSenha.value){
+    labelConfirmSenha.setAttribute('style', 'color: red')
+    labelConfirmSenha.innerHTML = '* As senhas não conferem'
+    confirmSenha.setAttribute('style', 'border-color: red')
+    validConfirmSenha = false
+  } else {
+    labelConfirmSenha.setAttribute('style', 'color: green')
+    labelConfirmSenha.innerHTML = 'Confirmar Senha'
+    confirmSenha.setAttribute('style', 'border-color: green')
+    validConfirmSenha = true
+  }
+})
+
+// telefone - proibir letras //
+
+function onlynumber(evt) {
+    var theEvent = evt || window.event;
+    var key = theEvent.keyCode || theEvent.which;
+    key = String.fromCharCode( key );
+    //var regex = /^[0-9.,]+$/;
+    var regex = /^[0-9.]+$/;
+    if( !regex.test(key) ) {
+       theEvent.returnValue = false;
+       if(theEvent.preventDefault) theEvent.preventDefault();
+    }
+ }
+
+    </script>
+
+</body>
+
+</html>
