@@ -8,4 +8,8 @@ urlpatterns = [
     path('docad/',views.docad, name='docad'),
     path('login/',views.login,name='login'),
     path('dolog/',views.dolog, name='dolog'),
+    path('erro/',views.erro, name='dolog'),
+    path('servico/',views.servico, name='servico'),
+
+
 ]

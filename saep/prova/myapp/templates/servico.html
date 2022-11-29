@@ -1,0 +1,682 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CuttieCuts - O melhor salão para você</title>
+
+  <!-- 
+    - favicon
+  -->
+  <link rel="shortcut icon" href="./favicon.svg" type="image/svg+xml">
+
+  <!-- 
+    - custom css link
+  -->
+
+  <link rel="stylesheet" href="{% static 'css/servico.css'%}">
+
+  <!-- 
+    - google font link
+  -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Jost:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+  <!-- 
+    - #HEADER
+  -->
+
+  <header class="header" data-header>
+    <div class="container">
+
+      <div class="overlay" data-overlay></div>
+
+      <div class="header-search">
+        <input type="search" name="search" placeholder="Pesquise o produto..." class="input-field">
+
+        <button class="search-btn" aria-label="Search">
+          <ion-icon name="search-outline"></ion-icon>
+        </button>
+      </div>
+
+      <div class="title">
+        <h1>CUTTIECUTS</h1>
+
+      </div>
+
+      <div class="header-actions">
+
+        <button class="header-action-btn">
+          <ion-icon name="person-outline" aria-hidden="true"></ion-icon>
+
+          <p class="header-action-label">Entrar</p>
+        </button>
+
+        <button class="header-action-btn">
+          <ion-icon name="person-outline" aria-hidden="true"></ion-icon>
+
+          <p class="header-action-label"></p>
+        </button>
+
+        <button class="header-action-btn">
+          <ion-icon name="person-outline" aria-hidden="true"></ion-icon>
+
+          <p class="header-action-label">Sair</p>
+        </button>
+
+        <button class="header-action-btn">
+          <ion-icon name="cart-outline" aria-hidden="true"></ion-icon>
+
+          <p class="header-action-label">Carrinho</p>
+
+        </button>
+
+        <button class="header-action-btn">
+          <ion-icon name="heart-outline" aria-hidden="true"></ion-icon>
+
+          <p class="header-action-label">Desejo</p>
+
+        </button>
+
+      </div>
+
+      <button class="nav-open-btn" data-nav-open-btn aria-label="Open Menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+
+      <nav class="navbar" data-navbar>
+
+        <div class="navbar-top">
+
+          <a href="#" class="logo">
+            <img src="./assets/images/logo.svg" alt="Casmart logo" width="130" height="31">
+          </a>
+
+          <button class="nav-close-btn" data-nav-close-btn aria-label="Close Menu">
+            <ion-icon name="close-outline"></ion-icon>
+          </button>
+
+        </div>
+
+        <ul class="navbar-list">
+
+          <li>
+            <a href="homepage.html" class="navbar-link">Home</a>
+          </li>
+
+          <li>
+            <a href="#category" class="navbar-link">Serviços</a>
+          </li>
+
+          <li>
+            <a href="#" class="navbar-link">Agendamento</a>
+          </li>
+
+        </ul>
+
+      </nav>
+
+    </div>
+  </header>
+
+  <main>
+    <article>
+
+      <!-- 
+        - #HERO
+      -->
+
+      <section class="hero" id="home" style="background-image: url('https://i.imgur.com/Sy3t70i.png')">
+        <div class="container">
+
+          <div class="hero-content">
+
+            <p class="hero-subtitle">Renove sua autoestima</p>
+
+            <h2 class="h1 hero-title">Salão de beleza incomparável</h2>
+
+            <button class="btn btn-primary">Compre agora</button>
+
+          </div>
+
+        </div>
+      </section>
+
+
+
+
+
+      <!-- 
+        - #SERVICE
+      -->
+
+      <section class="service">
+        <div class="container">
+
+          <ul class="service-list">
+
+            <li class="service-item">
+              <div class="service-item-icon">
+                <img src="https://raw.githubusercontent.com/codewithsadee/casmart/e6d01a7798068b84b645ce566dbdc191414b1cec/assets/images/service-icon-1.svg" alt="Service icon">
+              </div>
+
+              <div class="service-content">
+                <p class="service-item-title">Desconto</p>
+
+                <p class="service-item-text">Em todas as compras acima de $199</p>
+              </div>
+            </li>
+
+            <li class="service-item">
+              <div class="service-item-icon">
+                <img src="https://raw.githubusercontent.com/codewithsadee/casmart/e6d01a7798068b84b645ce566dbdc191414b1cec/assets/images/service-icon-2.svg" alt="Service icon">
+              </div>
+
+              <div class="service-content">
+                <p class="service-item-title">Devolução fáceis</p>
+
+                <p class="service-item-text">Política de Devolução de 30 Dias</p>
+              </div>
+            </li>
+
+            <li class="service-item">
+              <div class="service-item-icon">
+                <img src="https://raw.githubusercontent.com/codewithsadee/casmart/e6d01a7798068b84b645ce566dbdc191414b1cec/assets/images/service-icon-3.svg" alt="Service icon">
+              </div>
+
+              <div class="service-content">
+                <p class="service-item-title">Pagamento seguro</p>
+
+                <p class="service-item-text">Garantia 100% segura</p>
+              </div>
+            </li>
+
+            <li class="service-item">
+              <div class="service-item-icon">
+                <img src="https://raw.githubusercontent.com/codewithsadee/casmart/e6d01a7798068b84b645ce566dbdc191414b1cec/assets/images/service-icon-4.svg" alt="Service icon">
+              </div>
+
+              <div class="service-content">
+                <p class="service-item-title">Suporte especial</p>
+
+                <p class="service-item-text">Suporte dedicado 24 horas por dia</p>
+              </div>
+            </li>
+
+          </ul>
+
+        </div>
+      </section>
+
+
+
+
+
+      <!-- 
+        - #CATEGORY
+      -->
+
+      <section class="section category">
+        <div class="container">
+
+          <ul class="category-list">
+
+            <li class="category-item">
+              <figure class="category-banner">
+                <img src="https://images.unsplash.com/photo-1554519934-e32b1629d9ee?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80" alt="Cabelo" loading="lazy" width="510" height="600"
+                  class="w-100">
+              </figure>
+
+              <a href="#" class="btn btn-secondary">Corte de cabelo</a>
+            </li>
+
+            <li class="category-item">
+              <figure class="category-banner">
+                <img src="https://images.unsplash.com/photo-1626900518888-089abc4577a6?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80" alt="Make" loading="lazy" width="510" height="600"
+                  class="w-100">
+              </figure>
+
+              <a href="#" class="btn btn-secondary">Maquiagem</a>
+            </li>
+
+            <li class="category-item">
+              <figure class="category-banner">
+                <img src="https://images.unsplash.com/photo-1492106087820-71f1a00d2b11?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80" alt="Winter wear" loading="lazy" width="510" height="600"
+                  class="w-100">
+              </figure>
+
+              <a href="#" class="btn btn-secondary">Coloração capilar</a>
+            </li>
+
+            <li class="category-item">
+              <figure class="category-banner">
+                <img src="https://images.unsplash.com/photo-1632345031435-8727f6897d53?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80" alt="Exclusive footwear" loading="lazy" width="510"
+                  height="600" class="w-100">
+              </figure>
+
+              <a href="#" class="btn btn-secondary">Design de unhas</a>
+            </li>
+
+            <li class="category-item">
+              <figure class="category-banner">
+                <img src="https://images.unsplash.com/photo-1519823551278-64ac92734fb1?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80" alt="Jewelry" loading="lazy" width="510" height="600"
+                  class="w-100">
+              </figure>
+
+              <a href="#" class="btn btn-secondary">Estética e cuidados</a>
+            </li>
+
+            <li class="category-item">
+              <figure class="category-banner">
+                <img src="https://images.unsplash.com/photo-1549236177-77e8271c34b6?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=686&q=80" alt="Sports cap" loading="lazy" width="510" height="600"
+                  class="w-100">
+              </figure>
+
+              <a href="#" class="btn btn-secondary">Penteados</a>
+            </li>
+
+          </ul>
+
+        </div>
+      </section>
+
+
+
+
+
+      <!-- 
+        - #PRODUCT
+      -->
+
+      <section class="section product">
+        <div class="container">
+
+          <h2 class="h2 section-title">Nossos serviços</h2>
+
+          <ul class="filter-list">
+
+            <li>
+              <button class="filter-btn">Cabelo</button>
+            </li>
+
+            <li>
+              <button class="filter-btn">Maquiagem</button>
+            </li>
+
+            <li>
+              <button class="filter-btn">Estética</button>
+            </li>
+
+            <li>
+              <button class="filter-btn">Manicure</button>
+            </li>
+
+          </ul>
+
+          <ul class="product-list">
+
+            <li>
+              <div class="product-card">
+
+                <figure class="card-banner">
+
+                  <a href="#">
+                    <img src="https://images.unsplash.com/photo-1589710751893-f9a6770ad71b?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80" alt="Varsi Leather Bag" loading="lazy" width="800"
+                    width="800" height="1034" class="w-100">
+                  </a>
+
+                  <div class="card-badge red"> -25%</div>
+
+                  <div class="card-actions">
+
+                    <button class="card-action-btn" aria-label="Quick view">
+                      <ion-icon name="eye-outline"></ion-icon>
+                    </button>
+
+                    <button class="card-action-btn cart-btn">
+                      <ion-icon name="bag-handle-outline" aria-hidden="true"></ion-icon>
+
+                      <p>Adicionar ao carrinho</p>
+                    </button>
+
+                    <button class="card-action-btn" aria-label="Add to Whishlist">
+                      <ion-icon name="heart-outline"></ion-icon>
+                    </button>
+
+                  </div>
+
+                </figure>
+
+                <div class="card-content">
+                  <h3 class="h4 card-title">
+                    <a href="#">Extensão de cílios</a>
+                  </h3>
+
+                  <div class="card-price">
+                    <data value="48.75">R$90.00</data>
+
+                    <data value="65.00">R$79,90</data>
+                  </div>
+                </div>  
+
+              </div>
+            </li>
+
+            <li>
+              <div class="product-card">
+
+                <figure class="card-banner">
+
+                  <a href="#">
+                    <img src="https://images.unsplash.com/photo-1601244668565-afba8cbd2b51?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80" alt="Fit Twill Shirt for Woman" loading="lazy" width="800"
+                      height="1034" class="w-100">
+                  </a>
+
+                  <div class="card-badge green"> New</div>
+
+                  <div class="card-actions">
+
+                    <button class="card-action-btn" aria-label="Quick view">
+                      <ion-icon name="eye-outline"></ion-icon>
+                    </button>
+
+                    <button class="card-action-btn cart-btn">
+                      <ion-icon name="bag-handle-outline" aria-hidden="true"></ion-icon>
+
+                      <p>Adicionar ao carrinho</p>
+                    </button>
+
+                    <button class="card-action-btn" aria-label="Add to Whishlist">
+                      <ion-icon name="heart-outline"></ion-icon>
+                    </button>
+
+                  </div>
+
+                </figure>
+
+                <div class="card-content">
+                  <h3 class="h4 card-title">
+                    <a href="#">Unha de fibra de vidro</a>
+                  </h3>
+
+                  <div class="card-price">
+                    <data value="62.00"><data value="48.75">R$180.00</data></data>
+                
+                  </div>
+                </div>
+
+              </div>
+            </li>
+
+            <li>
+              <div class="product-card">
+
+                <figure class="card-banner">
+
+                  <a href="#">
+                    <img src="https://images.unsplash.com/photo-1568918803912-933d961baa1a?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80" alt="Grand Atlantic Chukka Boots" loading="lazy"
+                      width="800" height="1034" class="w-100">
+                  </a>
+
+                  <div class="card-actions">
+
+                    <button class="card-action-btn" aria-label="Quick view">
+                      <ion-icon name="eye-outline"></ion-icon>
+                    </button>
+
+                    <button class="card-action-btn cart-btn">
+                      <ion-icon name="bag-handle-outline" aria-hidden="true"></ion-icon>
+
+                      <p>Adcionar ao carrinho</p>
+                    </button>
+
+                    <button class="card-action-btn" aria-label="Add to Whishlist">
+                      <ion-icon name="heart-outline"></ion-icon>
+                    </button>
+
+                  </div>
+
+                </figure>
+
+                <div class="card-content">
+                  <h3 class="h4 card-title">
+                    <a href="#">Maquiagem completa</a>
+                  </h3>
+
+                  <div class="card-price">
+                    <data value="32.00"><data value="48.75">R$80.00</data></data>
+                  </div>
+                </div>
+
+              </div>
+            </li>
+
+            <li>
+              <div class="product-card">
+
+                <figure class="card-banner">
+
+                  <a href="#">
+                    <img src="https://images.unsplash.com/photo-1605980625458-21e4d9c29c4c?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80" alt="Women's Faux-Trim Shirt" loading="lazy" width="800"
+                      height="1034" class="w-100">
+                  </a>
+
+                  <div class="card-actions">
+
+                    <button class="card-action-btn" aria-label="Quick view">
+                      <ion-icon name="eye-outline"></ion-icon>
+                    </button>
+
+                    <button class="card-action-btn cart-btn">
+                      <ion-icon name="bag-handle-outline" aria-hidden="true"></ion-icon>
+
+                      <p>Adicionar ao carrinho</p>
+                    </button>
+
+                    <button class="card-action-btn" aria-label="Add to Whishlist">
+                      <ion-icon name="heart-outline"></ion-icon>
+                    </button>
+
+                  </div>
+
+                </figure>
+
+                <div class="card-content">
+                  <h3 class="h4 card-title">
+                    <a href="#">Fios iluminados</a>
+                  </h3>
+
+                  <div class="card-price">
+                    <data value="84.00"><data value="48.75">R$200.00</data></data>
+                  </div>
+                </div>
+
+              </div>
+            </li>
+
+            <li>
+              <div class="product-card">
+
+                <figure class="card-banner">
+
+                  <a href="#">
+                    <img src="https://images.unsplash.com/photo-1613457492120-4fcfbb7c3a5b?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80" alt="Soft Touch Interlock Polo" loading="lazy" width="800"
+                      height="1034" class="w-100">
+                  </a>
+
+                  <div class="card-actions">
+
+                    <button class="card-action-btn" aria-label="Quick view">
+                      <ion-icon name="eye-outline"></ion-icon>
+                    </button>
+
+                    <button class="card-action-btn cart-btn">
+                      <ion-icon name="bag-handle-outline" aria-hidden="true"></ion-icon>
+
+                      <p>Adicionar ao carrinho</p>
+                    </button>
+
+                    <button class="card-action-btn" aria-label="Add to Whishlist">
+                      <ion-icon name="heart-outline"></ion-icon>
+                    </button>
+
+                  </div>
+
+                </figure>
+
+                <div class="card-content">
+                  <h3 class="h4 card-title">
+                    <a href="#">Esmaltação da mão</a>
+                  </h3>
+
+                  <div class="card-price">
+                    <data value="84.00"><data value="48.75">R$25.00</data></data>
+                </div>
+
+              </div>
+            </li>
+
+            <li>
+              <div class="product-card">
+
+                <figure class="card-banner">
+
+                  <a href="#">
+                    <img src="https://i.pinimg.com/564x/9a/70/52/9a7052cf4a45cdab7eca5aa2eb819ed2.jpg" alt="Casmart Smart Watch" loading="lazy" width="800"
+                      height="1034" class="w-100">
+                  </a>
+
+                  <div class="card-actions">
+
+                    <button class="card-action-btn" aria-label="Quick view">
+                      <ion-icon name="eye-outline"></ion-icon>
+                    </button>
+
+                    <button class="card-action-btn cart-btn">
+                      <ion-icon name="bag-handle-outline" aria-hidden="true"></ion-icon>
+
+                      <p>Adicionar ao carrinho</p>
+                    </button>
+
+                    <button class="card-action-btn" aria-label="Add to Whishlist">
+                      <ion-icon name="heart-outline"></ion-icon>
+                    </button>
+
+                  </div>
+
+                </figure>
+
+                <div class="card-content">
+                  <h3 class="h4 card-title">
+                    <a href="#">Depilação na cera </a>
+                  </h3>
+
+                  <div class="card-price">
+                    <data value="30.00"><data value="48.75">R$40.00</data></data>
+
+                    <data value="38.00"><data value="48.75">R$35.00</data></data>
+                  </div>
+                </div>
+
+              </div>
+            </li>
+
+            <li>
+              <div class="product-card">
+
+                <figure class="card-banner">
+
+                  <a href="#">
+                    <img src="https://images.unsplash.com/photo-1587729927069-ef3b7a5ab9b4?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=688&q=80" alt="Casmart Smart Glass" loading="lazy" width="800"
+                      height="1034" class="w-100">
+                  </a>
+
+                  <div class="card-actions">
+
+                    <button class="card-action-btn" aria-label="Quick view">
+                      <ion-icon name="eye-outline"></ion-icon>
+                    </button>
+
+                    <button class="card-action-btn cart-btn">
+                      <ion-icon name="bag-handle-outline" aria-hidden="true"></ion-icon>
+
+                      <p>Adicionar ao carrinho</p>
+                    </button>
+
+                    <button class="card-action-btn" aria-label="Add to Whishlist">
+                      <ion-icon name="heart-outline"></ion-icon>
+                    </button>
+
+                  </div>
+
+                </figure>
+
+                <div class="card-content">
+                  <h3 class="h4 card-title">
+                    <a href="#">Unhas postiças</a>
+                  </h3>
+
+                  <div class="card-price">
+                    <data value="25.00"><data value="48.75">R$45.00</data></data>
+
+                    <data value="39.00"><data value="48.75">R$30.00</data></data>
+                  </div>
+                </div>
+
+              </div>
+            </li>
+
+            <li>
+              <div class="product-card">
+
+                <figure class="card-banner">
+
+                  <a href="#">
+                    <img src="https://images.unsplash.com/photo-1548207800-8c16d068bf17?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80" alt="Cotton Shirt for Men" loading="lazy" width="800"
+                      height="1034" class="w-100">
+                  </a>
+
+                  <div class="card-actions">
+
+                    <button class="card-action-btn" aria-label="Quick view">
+                      <ion-icon name="eye-outline"></ion-icon>
+                    </button>
+
+                    <button class="card-action-btn cart-btn">
+                      <ion-icon name="bag-handle-outline" aria-hidden="true"></ion-icon>
+
+                      <p>Adicionar ao carrinho</p>
+                    </button>
+
+                    <button class="card-action-btn" aria-label="Add to Whishlist">
+                      <ion-icon name="heart-outline"></ion-icon>
+                    </button>
+
+                  </div>
+
+                </figure>
+
+                <div class="card-content">
+                  <h3 class="h4 card-title">
+                    <a href="#">Corte e finalização</a>
+                  </h3>
+
+                  <div class="card-price">
+                    <data value="85.00"><data value="48.75">R$50.00</data></data>
+
+                    <data value="99.00"><data value="48.75">R$45.00</data></data>
+                  </div>
+                </div>
+
+              </div>
+            </li>

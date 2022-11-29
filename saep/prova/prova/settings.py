@@ -77,9 +77,9 @@ WSGI_APPLICATION = 'prova.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'prova_saep',
+        'NAME': 'salao1',
         'USER': 'root',
-        'PASSWORD': 'Senai2019,',
+        'PASSWORD': '03081828',
         'HOST': 'localhost',
         'PORT': '3306',
     }

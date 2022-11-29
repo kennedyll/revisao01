@@ -1,73 +1,44 @@
 {% load static %}
 
 <!DOCTYPE html>
-
-<html lang="br">
-
-<!--cabeça-->
-
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
+  <head>
+    <meta charset="utf-8">
     <title>Login</title>
+    <link rel="stylesheet" href="{% static 'css/login.css'%}">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"> 
+  </head>
+  <body>
+    <div class="center">
+      <h1>Login</h1>
+          
+    <div id='msgError'></div>
+    <div id='msgSuccess'></div>
+    
+    <form class="form"  name="login" method="post" action="/dolog/">
 
-    <!--link css-->
+        {% csrf_token %}
 
-   <link rel="stylesheet" href="{% static 'css/Login.css' %}">
+        <div class="label-float">
+            {{login.usuario}}
+          <label id="labelUsuario" for="usuario">Usuário</label>
+       </div>
 
-</head>
+       <div class="label-float">
+            {{login.senha}}
+        <label id="labelSenha" for="senha">Senha</label>
 
+        <i id="verSenha" class="fa fa-eye" aria-hidden="true"></i> 
+     </div>
 
-<!--corpo-->
+        <div class="pass">Esqueceu a senha?</div>
+        <div class='justify-center'>
+          <button onclick='logar()'>Logar</button>
+       </div>
+        <div class="signup_link">
+          Não tem uma conta? <a href="/cadastro">Cadastre-se</a>
+        </div>
+      </form>
+    </div>
 
-<body>
-
-    <header>
-
-        <nav>
-            <h2>Veste Você</h2>
-        </nav>
-    <section class="area-cadastro">
-
-        <div class="geral"> <!-- div geral -->
-
-            <h1>LOGIN</h1>
-
-            {% block body %}
-
-            <form class="form"  name="login" method="post" action="/dolog/"> <!-- form: codigo para gerar formulário-->
-
-             {% csrf_token %}
-
-                <div class="Usuario">
-                    {{login.usuario}}
-
-
-                </div>
-
-                <div class="senha">
-                    {{login.senha}}
-
-
-                </div>
-
-
-            <div class="criar">
-
-                <input type="submit" value="entrar"">
-
-            </div>
-            </form>
-
-            {% endblock %}
-
-        </div> <!-- fim da div geral-->
-
-    </section>
-    </header>
-
-</body>
-
+  </body>
 </html>

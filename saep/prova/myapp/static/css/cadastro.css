@@ -164,7 +164,7 @@ body {
 .btn{
     padding: 10px 60px;
     background: white;
-    border: 0;
+    border: 50px;
     outline: none;
     cursor: pointer;
     font-size: 22px;

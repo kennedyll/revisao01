@@ -19,14 +19,18 @@ def docad(request):
     tabela = Usuario.objects.all()
     form = UsersForm(request.POST or None)
     print(form)
-    erro = ''
     for c in tabela:
         if form['usuario'].data == c.usuario:
-            erro = 'User already exists'
-        return redirect('home') 
-    if form.is_valid() and erro == '':
+            return redirect('erro')
+    if form.is_valid():
         form.save()
-        return redirect('home')
+        return redirect('login')
+
+def erro(request):
+    return render(request, 'erro.html')
+
+def servico(request):
+    return render(request, 'servico.html')
 
 def cadastro(request):
     data = {}
@@ -42,7 +46,7 @@ def dolog(request):
         print(user)
         if user.senha == request.POST['senha']:
             request.session['uid'] = user.id
-            return redirect('salao')
+            return redirect('home')
         else:
             return HttpResponse("Falha no Login")
     else:
