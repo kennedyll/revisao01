@@ -26,24 +26,19 @@
 
                 <div>
                     <span>Nome completo</span>
-                    <input type="text" name="name" id="name" placeholder="Digite seu nome completo..." required>
+                    {{agendform.nome}}
                 </div>
+                
                 <div>
-                    <span>Nome de usuário</span>
-                    <input type="text" name="name" id="name" placeholder="Digite seu nome de usuário..." required> 
+                    <span>Endereço</span>
+                    {{agendform.endereco}}
                 </div>
-                <div class="t">
-                  <span>Número de telefone</span>
-                    <input type="text" name="number" id="number" placeholder="Digite seu numéro de telefone..." required>  
-              </div>
-              <div>
-                <span>Endereço</span>
-                  <input type="text" name="name" id="name" placeholder="Digite seu Endereço..." required>
-            </div>
+
                 <div>
+
                     <!-- <---this is the select option--->
                     <span>Selecione o funcionário</span>
-                    <select name="people" id="people" required>
+                    <select name="funcionario" id="people" required>
                         <option value=""></option>
                         <option value="1">Gregorio</option>
                         <option value="2">José</option>
@@ -52,10 +47,11 @@
                     </select>
                     <!-- <---this is the select option--->
                 </div>
+
                 <div>
                     <!-- <---this is the select option--->
                       <span>Selecione o serviço</span>
-                      <select name="people" id="people" required>
+                      <select name="servico" id="people" required>
                           <option value=""></option>
                           <option value="1">1 People</option>
                           <option value="2">2 People</option>
@@ -64,17 +60,21 @@
                       </select>
                       <!-- <---this is the select option--->
                 </div>
+
                 <div>
                   <span>Data de agendamento</span>
-                  <input type="date" name="date" id="date" placeholder="date" required>
+                  {{agendform.data}}
               </div>
+
                 <div>
                   <span>Horário</span>
-                  <input type="time" name="hora" id="hora" placeholder="Time" required>
+                  {{agendform.horario}}
               </div>
+
               <div class="mensagem">
                 <span>Deseja nos informar algo?</span>
               </div>   
+
               <textarea id="msg" cols="80" rows="4">
               </textarea>
                 <div id="submit">

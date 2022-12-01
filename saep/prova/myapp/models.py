@@ -40,12 +40,11 @@ class Agendamento (models.Model):
     ("18:00 às 19:00", "18:00 às 19:00"),
 ]
 
-    nome_completo = models.CharField(max_length=255)
-    numero_de_telefone = models.CharField(max_length=30)
+    nome = models.CharField(max_length=255)
     endereco = models.EmailField()
-    selecione_o_funcionario = models.CharField(max_length=100, choices=FUNCIONARIO_CHOICES, blank=True, null=True)
-    selecione_o_sevico = models.CharField(max_length=100, choices=SERVICO_CHOICES, blank=True, null=True)
-    data_de_agendamento = models.DateField()
+    funcionario = models.CharField(max_length=100, choices=FUNCIONARIO_CHOICES, blank=True, null=True)
+    servico = models.CharField(max_length=100, choices=SERVICO_CHOICES, blank=True, null=True)
+    data = models.DateField()
     horario = models.CharField(max_length=100, choices=TIME_CHOICES, blank=True, null=True)
 
 

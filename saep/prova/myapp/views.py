@@ -1,7 +1,7 @@
 from calendar import c
 from plistlib import UID
 from django.shortcuts import render, redirect, HttpResponse
-from myapp.forms import UsersForm, LoginForm
+from myapp.forms import UsersForm, LoginForm, AgendamentoForm
 from myapp.models import Usuario, Agendamento
 from datetime import datetime
 
@@ -35,15 +35,20 @@ def servico(request):
     return render(request, 'servico.html')
 
 def agendamento(request):
+    data = {}
     if request.method == 'POST':
-            c = Agendamento(usuario=Usuario.objects.get(id=request.session['uid']), nome = request.POST['nome'], ultimo_nome = request.POST['ultimo_nome'], celular = request.POST['celular'], data = request.POST['data'], hora = request.POST['hora'], comentario = request.POST['comentario'])
             data_convertida = datetime.strptime(request.POST['data'], '%Y-%m-%d').date()
             if data_convertida < datetime.now().date():
-                    return redirect('erroagend')
+                return HttpResponse('falha')
             else:
+                c = Agendamento(usuario=Usuario.objects.get(id=request.session['uid']), nome = request.POST['nome'], data = request.POST['data'], horario = request.POST['horario'], servico = request.POST['servico'], funcionario = request.POST['funcionario'],  endereco = request.POST['endereco'])
                 c.save()
+            return redirect('agendamento')
+    else:
+        data['agendform'] = AgendamentoForm()
 
-    return render(request, 'agendamento.html')
+        return render(request,'agendamento.html', data)
+    
 
 def cadastro(request):
     data = {}

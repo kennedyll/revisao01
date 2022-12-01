@@ -48,13 +48,14 @@ class LoginForm(ModelForm):
 # Create the form class.
 class UsersForm(ModelForm):
     senha = forms.CharField(widget=forms.PasswordInput(attrs={'maxlength': '14'}))
-    celular = forms.CharField(widget=forms.TextInput(attrs={'onkeypress':'regex_cel(event)', 'maxlength': '10'}))
+    telefone = forms.CharField(widget=forms.TextInput(attrs={'onkeypress':'regex_cel(event)', 'maxlength': '10'}))
     nome = forms.CharField(widget=forms.TextInput(attrs={'onkeypress':'regex_nome(event)'}))
-    ultimo_nome = forms.CharField(widget=forms.TextInput(attrs={'onkeypress':'regex_nome(event)'}))
+    usuario = forms.CharField(widget=forms.TextInput(attrs={'onkeypress':'regex_nome(event)'}))
+    sobrenome = forms.CharField(widget=forms.TextInput(attrs={'onkeypress':'regex_nome(event)'}))
     class Meta:
         model = Usuario
         widgets = {'password': forms.PasswordInput(),}
-        fields = ['usuario', 'senha', 'nome', 'ultimo_nome', 'celular']
+        fields = ['usuario', 'senha', 'nome', 'sobrenome', 'telefone']
 
 
 
@@ -85,23 +86,10 @@ SERVICO_CHOICES = [
     ("4 people", "4 people"),
 ]
 
-
-# Create the form class.
-class UsersForm(ModelForm):
-    senha = forms.CharField(widget=forms.PasswordInput(attrs={'maxlength': '14'}))
-    celular = forms.CharField(widget=forms.TextInput(attrs={'onkeypress':'regex_cel(event)', 'maxlength': '10'}))
-    nome = forms.CharField(widget=forms.TextInput(attrs={'onkeypress':'regex_nome(event)'}))
-    ultimo_nome = forms.CharField(widget=forms.TextInput(attrs={'onkeypress':'regex_nome(event)'}))
-    class Meta:
-        model = Usuario
-        widgets = {'password': forms.PasswordInput(),}
-        fields = ['usuario', 'senha', 'nome', 'ultimo_nome', 'celular']
-
 class AgendamentoForm(ModelForm):
-    data = forms.DateInput(attrs={'type': 'date'})
-    hora = forms.ChoiceField(choices = TIME_CHOICES,)
-    telefone = forms.CharField(widget=forms.TextInput(attrs={'onkeypress':'regex_cel(event)', 'maxlength': '10'}))
-    nome_completo = forms.CharField(widget=forms.TextInput(attrs={'onkeypress':'regex_nome(event)'}))
+    data = forms.DateField(widget=forms.DateInput(attrs={'type': 'date'}))
+    horario = forms.ChoiceField(choices = TIME_CHOICES,)
+    nome = forms.CharField(widget=forms.TextInput(attrs={'onkeypress':'regex_nome(event)'}))
     endereco = forms.EmailField(widget=forms.TextInput())
     funcionario = forms.ChoiceField(choices = FUNCIONARIO_CHOICES)
     Servico = forms.ChoiceField(choices = SERVICO_CHOICES)
@@ -111,13 +99,13 @@ class AgendamentoForm(ModelForm):
         model = Agendamento
 
         fields = [ 
-            'nome_completo',  
-            'numero_de_telefone', 
+            'nome',  
             'endereco', 
-            'selecione_o_funcionario', 
-            'selecione_o_sevico',
-            'data_de_agendamento',
-            'horario']
+            'funcionario', 
+            'servico',
+            'data',
+            'horario'
+            ]
 
 class ServicosForm(ModelForm):
     servico = forms.CharField() 
