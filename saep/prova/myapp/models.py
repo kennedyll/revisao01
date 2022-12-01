@@ -41,14 +41,12 @@ class Agendamento (models.Model):
 ]
 
     nome = models.CharField(max_length=255)
+    usuario = models.ForeignKey(Usuario, on_delete=models.CASCADE)
     endereco = models.EmailField()
     funcionario = models.CharField(max_length=100, choices=FUNCIONARIO_CHOICES, blank=True, null=True)
     servico = models.CharField(max_length=100, choices=SERVICO_CHOICES, blank=True, null=True)
     data = models.DateField()
     horario = models.CharField(max_length=100, choices=TIME_CHOICES, blank=True, null=True)
-
-
-
 
 class Servicos(models.Model):
     servico = models.CharField(max_length=120) 
