@@ -6,9 +6,9 @@
   font-family: "Poppins", sans-serif;
 }
 body{
+  background-image: url(https://i.imgur.com/OQetTb6.jpg );
   margin: 0;
   padding: 0;
-  background:  #ac9090;
   height: 100vh;
   overflow: hidden;
 }

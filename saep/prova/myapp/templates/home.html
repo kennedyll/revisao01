@@ -62,13 +62,6 @@
 
         </button>
 
-        <button class="header-action-btn">
-          <ion-icon name="heart-outline" aria-hidden="true"></ion-icon>
-
-          <p class="header-action-label">Desejo</p>
-
-        </button>
-
       </div>
 
       <button class="nav-open-btn" data-nav-open-btn aria-label="Open Menu">
@@ -96,11 +89,15 @@
           </li>
 
           <li>
-            <a href="#category" class="navbar-link">Serviços</a>
+            <a href="#service" class="navbar-link">Serviços</a>
           </li>
 
           <li>
-            <a href="#" class="navbar-link">Agendamento</a>
+            <a href="#blog" class="navbar-link">Nosso espaço</a>
+          </li>
+
+          <li>
+            <a href="/contato" class="navbar-link">Contato</a>
           </li>
 
         </ul>
@@ -138,7 +135,7 @@
         - #SERVICE
       -->
 
-      <section class="service">
+      <section class="service" id="service">
         <div class="container">
 
           <ul class="service-list">
@@ -695,7 +692,7 @@
 
           </ul>
 
-          <a href='login.html'><button class="btn btn-outline">Agende uma sessão agora</button></a>
+          <a href='/login'><button class="btn btn-outline">Agende uma sessão agora</button></a>
 
         </div>
       </section>
@@ -706,7 +703,7 @@
         - #BLOG
       -->
 
-      <section class="section blog">
+      <section class="section blog" id="blog">
         <div class="container">
 
           <h2 class="h2 section-title">Nosso espaço</h2>
@@ -891,15 +888,15 @@
           </li>
 
           <li>
-            <a href="cadastro.html" class="footer-link">Cadastro</a>
+            <a href="/cadastro" class="footer-link">Cadastro</a>
           </li>
 
           <li>
-            <a href="login.html" class="footer-link">Login</a>
+            <a href="/login" class="footer-link">Login</a>
           </li>
 
           <li>
-            <a href="agendamento.html" class="footer-link">Agendamento</a>
+            <a href="/agendamento" class="footer-link">Agendamento</a>
           </li>
         </ul>
 
@@ -910,19 +907,19 @@
           </li>
 
           <li>
-            <a href="#" class="footer-link">Cabelos</a>
+            <a href="#service" class="footer-link">Cabelos</a>
           </li>
 
           <li>
-            <a href="#" class="footer-link">Maquiagem</a>
+            <a href="#service" class="footer-link">Maquiagem</a>
           </li>
 
           <li>
-            <a href="#" class="footer-link">Estética</a>
+            <a href="#service" class="footer-link">Estética</a>
           </li>
 
           <li>
-            <a href="#" class="footer-link">Manicure</a>
+            <a href="#service" class="footer-link">Manicure</a>
           </li>
 
         </ul>
@@ -934,15 +931,15 @@
           </li>
 
           <li>
-            <a href="#" class="footer-link">Clique para entrar em contato</a>
+            <a href="/contato" class="footer-link">Clique para entrar em contato</a>
           </li>
 
           <li>
-            <a href="#" class="footer-link">Alguma pergunta?</a>
+            <a href="/contato" class="footer-link">Alguma pergunta?</a>
           </li>
 
           <li>
-            <a href="#" class="footer-link">Alguma reclamação?</a>
+            <a href="/contato" class="footer-link">Alguma reclamação?</a>
           </li>
 
         </ul>
@@ -998,5 +995,30 @@
   <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
 
 </body>
+
+<script>
+
+const overlay = document.querySelector("[data-overlay]");
+const navOpenBtn = document.querySelector("[data-nav-open-btn]");
+const navbar = document.querySelector("[data-navbar]");
+const navCloseBtn = document.querySelector("[data-nav-close-btn]");
+
+const navElemArr = [overlay, navOpenBtn, navCloseBtn];
+
+for (let i = 0; i < navElemArr.length; i++) {
+  navElemArr[i].addEventListener("click", function () {
+    navbar.classList.toggle("active");
+    overlay.classList.toggle("active");
+  });
+}
+
+const header = document.querySelector("[data-header]");
+
+window.addEventListener("scroll", function () {
+  window.scrollY >= 200 ? header.classList.add("active")
+    : header.classList.remove("active");
+})
+
+</script>
 
 </html>

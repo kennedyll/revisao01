@@ -2,44 +2,9 @@ from django.forms import ModelForm
 from django import forms
 from myapp.models import Usuario, Agendamento, Servicos
 
-class UsersForm(ModelForm):
-    usuario = forms.CharField(widget=forms.TextInput(attrs={
-        'placeholder': 'Usuario',
-        'maxlength':'30'
-        }))
-
-    nome = forms.CharField(widget=forms.TextInput(attrs={
-        'placeholder': 'nome',
-        'maxlength':'30'
-        }))
-
-    senha = forms.CharField(widget=forms.PasswordInput(attrs={
-        'placeholder': 'Senha',
-        'maxlength':'30'
-        }))
-
-    confirmar_senha = forms.CharField(widget=forms.PasswordInput(attrs={
-        'placeholder': 'confirmar_senha',
-        'maxlength':'30'
-        }))
-
-    sobrenome = forms.CharField(widget=forms.TextInput(attrs={
-        'placeholder': 'sobrenome',
-        'maxlength':'30'
-        }))
-
-    telefone = forms.CharField(widget=forms.TextInput(attrs={
-        'placeholder': 'telefone',
-        'maxlength':'30'
-        }))
-
-    class Meta:
-        model =  Usuario
-        widgets = {'password': forms.PasswordInput(),}
-        fields = ['usuario', 'senha', 'nome', 'sobrenome', 'telefone', 'confirmar_senha']
-
 class LoginForm(ModelForm):
-    senha = forms.CharField(widget=forms.PasswordInput)
+    usuario = forms.CharField(widget=forms.TextInput(attrs={'id': 'usuario'}))
+    senha = forms.CharField(widget=forms.PasswordInput(attrs={'id':'senha'}))
     class Meta:
         model = Usuario
         widgets = {'password': forms.PasswordInput(),}
@@ -47,19 +12,21 @@ class LoginForm(ModelForm):
 
 # Create the form class.
 class UsersForm(ModelForm):
-    senha = forms.CharField(widget=forms.PasswordInput(attrs={'maxlength': '14'}))
-    telefone = forms.CharField(widget=forms.TextInput(attrs={'onkeypress':'regex_cel(event)', 'maxlength': '10'}))
-    nome = forms.CharField(widget=forms.TextInput(attrs={'onkeypress':'regex_nome(event)'}))
-    usuario = forms.CharField(widget=forms.TextInput(attrs={'onkeypress':'regex_nome(event)'}))
-    sobrenome = forms.CharField(widget=forms.TextInput(attrs={'onkeypress':'regex_nome(event)'}))
+    usuario = forms.CharField(widget=forms.TextInput(attrs={'onkeypress':'regex_nome(event)', 'id': 'username' }))
+    nome = forms.CharField(widget=forms.TextInput(attrs={'onkeypress':'regex_nome(event)', 'id':'name'}))
+    senha = forms.CharField(widget=forms.PasswordInput(attrs={'maxlength': '14', 'id':'password'}))
+    confirmar_senha = forms.CharField(widget=forms.PasswordInput(attrs={'maxlength': '14', 'id':'password-confirmation'}))
+    email = forms.CharField(widget=forms.TextInput(attrs={'onkeypress':'regex_cel(event)', 'maxlength': '30', 'id':'email'}))
+    data_nasc = forms.DateField(widget=forms.DateInput(attrs={'type': 'date', 'id':'data'}))
     class Meta:
         model = Usuario
         widgets = {'password': forms.PasswordInput(),}
-        fields = ['usuario', 'senha', 'nome', 'sobrenome', 'telefone']
+        fields = ['usuario', 'nome', 'senha', 'confirmar_senha', 'email', 'data_nasc']
 
 
 
 TIME_CHOICES = [
+    ("", ""),
     ("08:00 às 09:00", "08:00 às 09:00"),
     ("09:00 às 10:00", "09:00 às 10:00"),
     ("10:00 às 11:00", "10:00 às 11:00"),
@@ -80,10 +47,10 @@ FUNCIONARIO_CHOICES = [
 ]
 
 SERVICO_CHOICES = [
-    ("1 people", "1 people"),
-    ("2 people", "2 people"),
-    ("3 people","3 people"),
-    ("4 people", "4 people"),
+    ("1 cabelo", "1 cabelo"),
+    ("2 maquiagem", "2 maquiagem"),
+    ("3 estetica", "3 estetica"),
+    ("4 manicure", "4 manicure"),
 ]
 
 class AgendamentoForm(ModelForm):

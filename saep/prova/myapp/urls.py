@@ -11,6 +11,8 @@ urlpatterns = [
     path('erro/',views.erro, name='dolog'),
     path('servico/',views.servico, name='servico'),
     path('agendamento/',views.agendamento, name='agendamento'),
-
+    path('servico/',views.servico, name='servico'),
+    path('contato/',views.contato, name='contato'),
+    path('dologout/',views.dologout, name='dologout'),
 
 ]

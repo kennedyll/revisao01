@@ -17,8 +17,7 @@
   <!-- 
     - custom css link
   -->
-
-  <link rel="stylesheet" href="{% static 'css/servico.css'%}">
+  <link rel="stylesheet" href="{% static 'css/servico.css' %}">
 
   <!-- 
     - google font link
@@ -55,21 +54,7 @@
       <div class="header-actions">
 
         <button class="header-action-btn">
-          <ion-icon name="person-outline" aria-hidden="true"></ion-icon>
 
-          <p class="header-action-label">Entrar</p>
-        </button>
-
-        <button class="header-action-btn">
-          <ion-icon name="person-outline" aria-hidden="true"></ion-icon>
-
-          <p class="header-action-label"></p>
-        </button>
-
-        <button class="header-action-btn">
-          <ion-icon name="person-outline" aria-hidden="true"></ion-icon>
-
-          <p class="header-action-label">Sair</p>
         </button>
 
         <button class="header-action-btn">
@@ -79,12 +64,40 @@
 
         </button>
 
-        <button class="header-action-btn">
-          <ion-icon name="heart-outline" aria-hidden="true"></ion-icon>
+        <img src="https://img2.gratispng.com/20180331/khw/kisspng-computer-icons-user-clip-art-user-5abf13d4b67e20.4808850915224718927475.jpg" class="user-pic" onclick="toggleMenu()">
 
-          <p class="header-action-label">Desejo</p>
+        <div class="sub-menu-wrap" id="subMenu">
+         <div class="sub-menu">
+           <hr>
+           <hr>
+           <hr>
 
-        </button>
+              <a href="/contato" class="sub-menu-link">
+                  <p>Ajuda & Suporte</p>
+                  <span></span>
+                </a>
+
+                <a href="/dologout/" class="sub-menu-link">
+                    <p>Sair</p>
+                    <span></span>
+                  </a>
+                  
+                </div>
+              </div>
+
+              <b>ola, {{uid.usuario}}</b>
+              
+    </nav>
+
+</div>
+
+<script>
+let subMenu = document.getElementById("subMenu");
+
+function toggleMenu(){
+    subMenu.classList.toggle("open-menu");
+}
+</script>
 
       </div>
 
@@ -111,15 +124,19 @@
         <ul class="navbar-list">
 
           <li>
-            <a href="homepage.html" class="navbar-link">Home</a>
+            <a href="#home" class="navbar-link">Home</a>
           </li>
 
           <li>
-            <a href="#category" class="navbar-link">Serviços</a>
+            <a href="#service" class="navbar-link">Serviços</a>
           </li>
 
           <li>
-            <a href="#" class="navbar-link">Agendamento</a>
+            <a href="/agendamento" class="navbar-link">Agendamento</a>
+          </li>
+
+          <li>
+            <a href="#blog" class="navbar-link">Nosso espaço</a>
           </li>
 
         </ul>
@@ -145,8 +162,6 @@
 
             <h2 class="h1 hero-title">Salão de beleza incomparável</h2>
 
-            <button class="btn btn-primary">Compre agora</button>
-
           </div>
 
         </div>
@@ -160,7 +175,7 @@
         - #SERVICE
       -->
 
-      <section class="service">
+      <section class="service" id="service">
         <div class="container">
 
           <ul class="service-list">
@@ -330,7 +345,7 @@
 
                 <figure class="card-banner">
 
-                  <a href="#">
+                  <a href="https://images.unsplash.com/photo-1589710751893-f9a6770ad71b?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80">
                     <img src="https://images.unsplash.com/photo-1589710751893-f9a6770ad71b?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80" alt="Varsi Leather Bag" loading="lazy" width="800"
                     width="800" height="1034" class="w-100">
                   </a>
@@ -680,3 +695,344 @@
 
               </div>
             </li>
+
+            <li>
+             
+
+              
+
+              </div>
+            </li>
+
+            <li>
+              <div class="product-card">
+
+                <figure class="card-banner">
+
+
+                  <div class="card-actions">
+
+                    <button class="card-action-btn" aria-label="Quick view">
+                      <ion-icon name="eye-outline"></ion-icon>
+                    </button>
+
+                    <button class="card-action-btn cart-btn">
+                      <ion-icon name="bag-handle-outline" aria-hidden="true"></ion-icon>
+
+                      <p>Add to Cart</p>
+                    </button>
+
+                    <button class="card-action-btn" aria-label="Add to Whishlist">
+                      <ion-icon name="heart-outline"></ion-icon>
+                    </button>
+
+                  </div>
+
+                </figure>
+
+              </div>
+
+            </li>
+
+          </ul>
+
+        </div>
+
+      </section>
+
+       <!-- 
+        - #BLOG
+      -->
+
+      <section class="section blog" id="blog">
+        <div class="container">
+
+          <h2 class="h2 section-title">Nosso espaço</h2>
+
+          <ul class="blog-list">
+
+            <li>
+              <div class="blog-card">
+
+                <figure class="card-banner">
+                  <a href="#">
+                    <img src="https://images.unsplash.com/photo-1646335936643-460adcd59c48?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTN8fGNhYmVsb3N8ZW58MHwwfDB8fA%3D%3D&auto=format&fit=crop&w=500&q=60" alt="Worthy Cyber Monday Fashion From Casmart" loading="lazy"
+                      width="1020" height="700" class="w-100">
+                  </a>
+                </figure>
+
+                <div class="card-content">
+
+                  <ul class="card-meta-list">
+
+                    <li class="card-meta-item">
+                      <ion-icon name="folder-open-outline"></ion-icon>
+
+                      <a href="" class="card-meta-link">Natal</a>
+                    </li>
+
+                    <li class="card-meta-item">
+                      <ion-icon name="time-outline"></ion-icon>
+
+                      <a href="#" class="card-meta-link">
+                        <time datetime="2021-03-31">Rio Grande do Norte</time>
+                      </a>
+                    </li>
+
+                  </ul>
+
+                  <h3 class="h3 card-title">
+                    <a href="#">Equipamentos de primeira linha</a>
+                  </h3>
+
+                </div>
+
+              </div>
+            </li>
+
+            <li>
+              <div class="blog-card">
+
+                <figure class="card-banner">
+                  <a href="#">
+                    <img src="https://www.decorfacil.com/wp-content/uploads/2015/08/imagem-89.jpg" alt="Holiday Home Decoration I’ve Recently Ordered"
+                      loading="lazy" width="1020" height="700" class="w-100">
+                  </a>
+                </figure>
+
+                <div class="card-content">
+
+                  <ul class="card-meta-list">
+
+                    <li class="card-meta-item">
+                      <ion-icon name="folder-open-outline"></ion-icon>
+
+                      <a href="#" class="card-meta-link">Natal</a>
+                    </li>
+
+                    <li class="card-meta-item">
+                      <ion-icon name="time-outline"></ion-icon>
+
+                      <a href="#" class="card-meta-link">
+                        <time datetime="2021-03-31">Rio Grande do Norte</time>
+                      </a>
+                    </li>
+
+                  </ul>
+
+                  <h3 class="h3 card-title">
+                    <a href="#">Salão totalmente moderno</a>
+                  </h3>
+
+                </div>
+
+              </div>
+            </li>
+
+            <li>
+              <div class="blog-card">
+
+                <figure class="card-banner">
+                  <a href="#">
+                    <img src="https://images.unsplash.com/photo-1646335940491-8cd46adec80b?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80" alt="Unique Ideas for Fashion You Haven’t heard yet"
+                      loading="lazy" width="1020" height="700" class="w-100">
+                  </a>
+                </figure>
+
+                <div class="card-content">
+
+                  <ul class="card-meta-list">
+
+                    <li class="card-meta-item">
+                      <ion-icon name="folder-open-outline"></ion-icon>
+
+                      <a href="#" class="card-meta-link">Natal</a>
+                    </li>
+
+                    <li class="card-meta-item">
+                      <ion-icon name="time-outline"></ion-icon>
+
+                      <a href="#" class="card-meta-link">
+                        <time datetime="2021-03-31">Rio Grande do Norte</time>
+                      </a>
+                    </li>
+
+                  </ul>
+
+                  <h3 class="h3 card-title">
+                    <a href="#">Profissionais de alto nível</a>
+                  </h3>
+
+                </div>
+
+              </div>
+            </li>
+
+          </ul>
+
+        </div>
+      </section>
+
+    
+  <footer class="footer">
+
+    <div class="footer-top">
+      <div class="container">
+
+        <div class="footer-brand">
+
+          <a href="#" class="logo">
+            <h1>CuttieCuts</h1>
+          </a>
+
+          <p class="footer-text">
+            A CuttieCuts é um site de salão de beleza para apresentar uma variedade de serviços
+            completos de maquiagem, estética, cabelo e manicure.
+            No nosso salão, as clientes
+            desfrutam do ótimo trabalho e atendimento da equipe de especialista, além de saírem com a autoestima renovada. 
+          </p>
+
+          <ul class="social-list">
+
+            <li>
+              <a href="#" class="social-link">
+                <ion-icon name="logo-facebook"></ion-icon>
+              </a>
+            </li>
+
+            <li>
+              <a href="#" class="social-link">
+                <ion-icon name="logo-twitter"></ion-icon>
+              </a>
+            </li>
+
+            <li>
+              <a href="#" class="social-link">
+                <ion-icon name="logo-instagram"></ion-icon>
+              </a>
+            </li>
+
+            <li>
+              <a href="#" class="social-link">
+                <ion-icon name="logo-pinterest"></ion-icon>
+              </a>
+            </li>
+
+          </ul>
+
+        </div>
+
+        <ul class="footer-list">
+
+          <li>
+            <p class="footer-list-title">Informações</p>
+          </li>
+
+          <li>
+            <a href="/cadastro" class="footer-link">Cadastro</a>
+          </li>
+
+          <li>
+            <a href="/login" class="footer-link">Login</a>
+          </li>
+
+          <li>
+            <a href="/agendamento" class="footer-link">Agendamento</a>
+          </li>
+        </ul>
+
+        <ul class="footer-list">
+
+          <li>
+            <p class="footer-list-title">Categorias</p>
+          </li>
+
+          <li>
+            <a href="#service" class="footer-link">Cabelos</a>
+          </li>
+
+          <li>
+            <a href="#service" class="footer-link">Maquiagem</a>
+          </li>
+
+          <li>
+            <a href="#service" class="footer-link">Estética</a>
+          </li>
+
+          <li>
+            <a href="#service" class="footer-link">Manicure</a>
+          </li>
+
+        </ul>
+
+        <ul class="footer-list">
+
+          <li>
+            <p class="footer-list-title">Ajuda & Suporte</p>
+          </li>
+
+          <li>
+            <a href="/contato" class="footer-link">Clique para entrar em contato</a>
+          </li>
+
+          <li>
+            <a href="/contato" class="footer-link">Alguma pergunta?</a>
+          </li>
+
+          <li>
+            <a href="/contato" class="footer-link">Alguma reclamação?</a>
+          </li>
+
+        </ul>
+
+      </div>
+    </div>
+
+
+
+
+
+    <div class="footer-bottom">
+      <div class="container">
+
+        <p class="copyright">
+          &copy; 2022 <a href="#">CuttieCuts</a>. Todos os direitos reservados
+        </p>
+
+        <ul class="footer-bottom-list">
+
+          <li>
+            <a href="#" class="footer-bottom-link">Política de privacidade</a>
+          </li>
+
+          <li>
+            <a href="#" class="footer-bottom-link">Termos & Condições</a>
+          </li>
+
+        </ul>
+
+        <div class="payment">
+          <p class="payment-title">Nós apoiamos</p>
+
+          <img src="https://raw.githubusercontent.com/codewithsadee/casmart/master/assets/images/payment-img.png" alt="Logos - Pagamentos" class="payment-img">
+        </div>
+
+      </div>
+    </div>
+
+  </footer>
+
+  <!-- 
+    - custom js link
+  -->
+  <script src="homepage2.js"></script>
+
+  <!-- 
+    - ionicon link
+  -->
+  <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+
+</body>
+
+</html>

@@ -22,7 +22,7 @@ def docad(request):
     print(form)
     for c in tabela:
         if form['usuario'].data == c.usuario:
-            return redirect('erro')
+            return redirect('login')
     if form.is_valid():
         form.save()
         return redirect('login')
@@ -32,18 +32,24 @@ def erro(request):
     return render(request, 'erro.html')
 
 def servico(request):
-    return render(request, 'servico.html')
+    try:
+        profile = {}
+        profile['uid'] = Usuario.objects.get(id=request.session['uid'])
+        return render(request,'servico.html', profile)
+    except:
+        return render(request,'home.html')
+
+def contato(request):
+    return render(request, 'contato.html')
 
 def agendamento(request):
     data = {}
     if request.method == 'POST':
             data_convertida = datetime.strptime(request.POST['data'], '%Y-%m-%d').date()
             if data_convertida < datetime.now().date():
-                return HttpResponse('falha')
-            else:
                 c = Agendamento(usuario=Usuario.objects.get(id=request.session['uid']), nome = request.POST['nome'], data = request.POST['data'], horario = request.POST['horario'], servico = request.POST['servico'], funcionario = request.POST['funcionario'],  endereco = request.POST['endereco'])
                 c.save()
-            return redirect('agendamento')
+            return redirect('servico')
     else:
         data['agendform'] = AgendamentoForm()
 
@@ -59,15 +65,23 @@ def dolog(request):
     if request.method == 'POST':
         try:
             user = Usuario.objects.get(usuario=request.POST['usuario']) # select * from usuario where usuario
+            print(user)
         except:
             return HttpResponse("Falha no Login")
-        print(user)
         if user.senha == request.POST['senha']:
             request.session['uid'] = user.id
-            return redirect('home')
+            return redirect('servico')
         else:
-            return HttpResponse("Falha no Login")
+            return HttpResponse("servico")
     else:
         redirect('cadastro')
+
+def dologout(request):
+    if request.session['uid'] != "" or request.session['uid'] != None:
+        try:
+            del request.session['uid']
+        except KeyError:
+            return redirect('home')
+    return redirect('home')
 
 

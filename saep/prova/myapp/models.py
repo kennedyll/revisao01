@@ -6,10 +6,10 @@ from django.db import models
 
 class Usuario(models.Model):
     usuario = models.CharField(max_length=16)
+    email = models.EmailField()
+    data_nasc = models.DateField()
     senha = models.CharField(max_length=16)
     nome = models.CharField(max_length=16)
-    sobrenome = models.CharField(max_length=16)
-    telefone = models.CharField(max_length=16)
 
 class Agendamento (models.Model):
 
@@ -21,13 +21,14 @@ class Agendamento (models.Model):
 ]
 
     SERVICO_CHOICES = [
-    ("1 people", "1 people"),
-    ("2 people", "2 people"),
-    ("3 people","3 people"),
-    ("4 people", "4 people"),
+    ("1 cabelo", "1 cabelo"),
+    ("2 maquiagem", "2 maquiagem"),
+    ("3 estetica","3 estetica"),
+    ("4 manicure", "4 manicure"),
 ]
 
     TIME_CHOICES = [
+    ("", ""),
     ("08:00 às 09:00", "08:00 às 09:00"),
     ("09:00 às 10:00", "09:00 às 10:00"),
     ("10:00 às 11:00", "10:00 às 11:00"),

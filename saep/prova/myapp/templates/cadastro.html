@@ -1,91 +1,95 @@
 {%  load static %}
 
 <!DOCTYPE html>
-<html lang="pt-br">
-
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /> 
 
     <link rel="stylesheet" href="{% static 'css/cadastro.css' %}">
-
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">  
-
-    <title>Formulário</title>
-
-</head>
-
-<body>
-  
+        
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;900&display=swap" rel="stylesheet" />
+    <title>Cadastro - CuttieCuts</title>
+  </head>
+  <body>
     <div class="container">
-        <div class="form-image">
-            <img src="https://i.imgur.com/v6IPhVo.png" alt="">
-        </div>
+      <div class="header">
+        <h2>Criar Uma Conta</h2>
+      </div>
 
-        <form class="form" name="cadastro" method="post" action="/docad/"> 
+      <form class="form" name="cadastro" method="post" action="/docad/"> 
 
           {% csrf_token %}
 
-                <div class="form-header">
-                    <div class="title">
-                        
-                        <div class="cadastre-se">
+        <div class="form-control">
+          <label for="name">Nome completo</label>
 
-                            <h1>Cadastre-se</h1>
+            {{form.nome}}
 
-                            <div id='msgError'></div>
-                        <div id='msgSuccess'></div>
-                        </div>
-                    
-                    </div>
-                </div>
-
-                <div class="input-group">
-                    <div class="label-float">
-                        <label id="labelNome" for="nome">Nome</label>
-                        {{form.nome}}
-                     </div>
-
-                     <div class="label-float">
-                        <label id="labelSobrenome" for="sobrenome">Sobrenome</label>
-                        {{form.sobrenome}}
-                     </div>
-
-                     <div class="label-float">
-                        <label id="labelTelefone" for="telefone">Telefone</label>
-                        {{form.telefone}}
-                     </div>
-
-                     <div class="label-float">
-                        <label id="labelUsuario" for="usuario">Usuário</label>
-                        {{form.usuario}}
-                     </div>
-
-                     <div class="label-float">
-                        <label id="labelSenha" for="senha">Senha</label> 
-                        {{form.senha}}             
-                     </div>
-
-                     <div class="label-float">
-                        <label id="labelConfirmSenha" for="confirmSenha">Confirmar Senha</label>
-                        <input type="password" id="confirmSenha" required>
-                     </div>
-            
-                </div>
-
-                <div class="justify-center">
-                    <button type="submit" class="btn" onclick='cadastrar()'>Cadastrar</button>
-                </div>
-
-            </form>
-
-         </div>
-
-            
+          <i class="fas fa-exclamation-circle"></i>
+          <i class="fas fa-check-circle"></i>
+          <small>Mensagem de erro</small>
         </div>
+
+
+        <div class="form-control">
+            <label for="username">Nome de usuário</label>
+
+              {{form.usuario}}
+
+            <i class="fas fa-exclamation-circle"></i>
+            <i class="fas fa-check-circle"></i>
+            <small>Mensagem de erro</small>
+          </div>
+
+          <div class="form-control">
+            <label for="username">Data de nascimento</label>
+
+              {{form.data_nasc}}
+
+            <i class="fas fa-exclamation-circle"></i>
+            <i class="fas fa-check-circle"></i>
+            <small>Mensagem de erro</small>
+          </div>
+
+        <div class="form-control">
+          <label for="email">Email</label>
+
+            {{form.email}}
+
+          <i class="fas fa-exclamation-circle"></i>
+          <i class="fas fa-check-circle"></i>
+          <small>Mensagem de erro</small>
+        </div>
+
+        <div class="form-control">
+          <label for="password">Senha</label>
+
+            {{form.senha}}
+
+          <i class="fas fa-exclamation-circle"></i>
+          <i class="fas fa-check-circle"></i>
+          <small>Mensagem de erro</small>
+        </div>
+
+        <div class="form-control">
+          <label for="password-confirmation">Confirmação de senha</label>
+
+            {{form.confirmar_senha}}
+
+          <i class="fas fa-exclamation-circle"></i>
+          <i class="fas fa-check-circle"></i>
+          <small>Mensagem de erro</small>
+        </div>
+
+        <button type="submit">Cadastrar</button>
+      </form>
     </div>
 
-</body>
+    <script src="{% static 'css/cadastro.js' %}"></script>
 
+  </body>
 </html>
